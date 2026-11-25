@@ -4,7 +4,7 @@ plugins {
     id("org.jetbrains.kotlin.plugin.compose")
     id("com.google.devtools.ksp")
     id("com.android.application")
-// Add the Google services Gradle plugin
+    // Add the Google services Gradle plugin
     id("com.google.gms.google-services")
 }
 
@@ -62,11 +62,11 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
     debugImplementation("androidx.compose.ui:ui-tooling")
     testImplementation("junit:junit:4.13.2")
-// Import the Firebase BoM
+    // Import the Firebase BoM
     implementation(platform("com.google.firebase:firebase-bom:35.2.0"))
-// TODO: Add the dependencies for Firebase products you want to use
-// When using the BoM, don't specify versions in Firebase dependencies
+    // TODO: Add the dependencies for Firebase products you want to use
+    // When using the BoM, don't specify versions in Firebase dependencies
     implementation("com.google.firebase:firebase-analytics")
-// Add the dependencies for any other desired Firebase products
-// https://firebase.google.com/docs/android/setup#available-libraries
+    // Add the dependencies for any other desired Firebase products
+    // https://firebase.google.com/docs/android/setup#available-libraries
 }
