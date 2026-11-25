@@ -3,13 +3,13 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.plugin.compose")
     id("com.google.devtools.ksp")
-    // Add the Google services Gradle plugin
     id("com.google.gms.google-services")
 }
 
 android {
     namespace = "mg.madagestion"
     compileSdk = 35
+
     defaultConfig {
         applicationId = "mg.madagestion"
         minSdk = 26
@@ -17,8 +17,9 @@ android {
         versionCode = 3
         versionName = "0.4.0"
     }
-    // Clé de test fixe : chaque APK de test peut ainsi s'installer par-dessus le précédent sans perdre les données.
-    // Une version destinée au public doit être signée avec une clé privée, jamais avec celle-ci.
+
+    // Clé de test fixe : chaque APK de test peut s'installer par-dessus le précédent sans perdre les données.
+    // Une version publique doit être signée avec une clé privée, jamais avec celle-ci.
     signingConfigs {
         getByName("debug") {
             storeFile = file("debug.keystore")
@@ -27,7 +28,9 @@ android {
             keyPassword = "android"
         }
     }
+
     buildFeatures { compose = true }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -59,13 +62,11 @@ dependencies {
     ksp("androidx.room:room-compiler:2.6.1")
     implementation("androidx.work:work-runtime-ktx:2.10.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
+
+    // Firebase (sans version : elle vient du BoM)
+    implementation(platform("com.google.firebase:firebase-bom:35.2.0"))
+    implementation("com.google.firebase:firebase-analytics")
+
     debugImplementation("androidx.compose.ui:ui-tooling")
     testImplementation("junit:junit:4.13.2")
-    // Import the Firebase BoM
-    implementation(platform("com.google.firebase:firebase-bom:35.2.0"))
-    // TODO: Add the dependencies for Firebase products you want to use
-    // When using the BoM, don't specify versions in Firebase dependencies
-    implementation("com.google.firebase:firebase-analytics")
-    // Add the dependencies for any other desired Firebase products
-    // https://firebase.google.com/docs/android/setup#available-libraries
 }
