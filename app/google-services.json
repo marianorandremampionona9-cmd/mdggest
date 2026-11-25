@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "768251912625",
+    "project_id": "madagestion-57fce",
+    "storage_bucket": "madagestion-57fce.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:768251912625:android:1d9396238331f693cc9d90",
+        "android_client_info": {
+          "package_name": "mg.madagestion"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRWY4pPPSWiHycGezS85fGAUDjE2XMNes"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
